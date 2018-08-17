@@ -30,6 +30,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'pry'
+  gem 'factory_bot_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
