@@ -5,12 +5,15 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    if user.save
+    if email_registered?(user)
+      flash[:error] = "This email is already registered."
+      redirect_to register_path
+    elsif user.save
       flash[:success] = "Ta-da! Registration successful!"
       redirect_to root_path
     else
       flash[:error] = "Something went wrong."
-      render :new
+      redirect_to register_path
     end
   end
 
@@ -23,5 +26,9 @@ class UsersController < ApplicationController
         :first_name,
         :last_name
       )
+    end
+
+    def email_registered?(user)
+      User.where(email: user.email).present?
     end
 end
