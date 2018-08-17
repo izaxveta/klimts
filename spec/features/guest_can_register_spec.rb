@@ -13,7 +13,7 @@ RSpec.describe 'Guests' do
     visit '/'
     click_on "Register"
 
-    expect(current_path).to eq(new_user_path)
+    expect(current_path).to eq(register_path)
 
     fill_in 'user_email', with: 'eric.northman@mail.com'
     fill_in 'user_first_name', with: 'Eric'
