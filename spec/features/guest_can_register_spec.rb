@@ -37,4 +37,17 @@ RSpec.describe 'Guests' do
     expect(current_path).to eq(register_path)
     expect(page).to have_selector(:css, '.alert.alert-error')
   end
+
+  it 'must input an email in valid format when registering' do
+    click_on "Register"
+    fill_in 'user_email', with: 'jessica.hamby.mail.com'
+    fill_in 'user_first_name', with: 'Jessica'
+    fill_in 'user_last_name', with: 'Hamby'
+    fill_in 'user_password', with: 'password'
+    fill_in 'user_password_confirmation', with: 'password'
+    click_on 'Register'
+    expect(current_path).to eq(register_path)
+    expect(page).to have_content("Something went wrong.")
+    expect(page).to have_selector(:css, '.alert.alert-error')
+  end
 end
