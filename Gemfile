@@ -38,6 +38,7 @@ group :test do
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner'
+  gem 'rspec-pride'
 end
 
 group :development do
