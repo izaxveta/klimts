@@ -1,4 +1,4 @@
-<%= form_for @user do |f| %>
+<%= form_for User.new do |f| %>
   <%= f.text_field :email, required: true, placeholder: "E-mail", class: 'form__registration__input email' %>
   <%= f.text_field :first_name, required: true, placeholder: "First Name", class: 'form__registration__input firstname' %>
   <%= f.text_field :last_name, required: true, placeholder: "Last Name", class: 'form__registration__input lastname' %>
