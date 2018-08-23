@@ -1,0 +1,25 @@
+<div class='footer'>
+  <div class='footer__section-third'>
+    <div class='social-lineup'>
+      <%= image_tag 'icons/facebook', class: 'icon icon__social' %>
+      <%= image_tag 'icons/instagram', class: 'icon icon__social' %>
+      <%= image_tag 'icons/linkedin', class: 'icon icon__social' %>
+      <%= image_tag 'icons/twitter', class: 'icon icon__social' %>
+      <%= image_tag 'icons/github', class: 'icon icon__social' %>
+      <%= image_tag 'icons/pinterest', class: 'icon icon__social' %>
+      <%= image_tag 'icons/youtube', class: 'icon icon__social' %>
+      <%= image_tag 'icons/google_plus', class: 'icon icon__social' %>
+    </div>
+  </div>
+  <div class='footer__section-third'>
+    <div class='form__newsletter'>
+      <%= form_tag("/newsletter", method: "get") do %>
+        <%= text_field_tag :email, nil, placeholder: "Subscribe to the newsletter", class: 'input__newsletter email' %>
+        <%= submit_tag "Submit", class: 'input__newsletter-button' %>
+      <% end %>
+    </div>
+  </div>
+  <div class='footer__section-third'>
+    <p><%= image_tag 'icons/cookie', class: 'icon icon__cookie' %>This website uses cookies to improve your experience.</p>
+  </div>
+</div>
