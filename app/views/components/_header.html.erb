@@ -1,0 +1,13 @@
+<div class='header'>
+  <div class='banner'>
+    <% if @user %>
+      <%= link_to 'Sign Out', signout_path, method: 'delete' %>
+    <% else %>
+      <%= link_to "Sign In", signin_path, class: 'button__signin' %>
+      <%= link_to "Register", register_path, class: 'button__register' %>
+    <% end %>
+  </div>
+    <div class='navigation'>
+      <h3>Klimt's</h3>
+    </div>
+</div>
