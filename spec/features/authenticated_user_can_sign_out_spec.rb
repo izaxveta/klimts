@@ -7,6 +7,6 @@ RSpec.describe 'Authenticated users' do
     visit dashboard_path
     click_on 'Sign Out'
     expect(current_path).to eq(root_path)
-    expect(page).to have_selector(:css, '.alert.alert-signout_success')
+    expect(page).to have_selector(:css, '.alert.alert-success')
   end
 end
