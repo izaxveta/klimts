@@ -1,0 +1,34 @@
+.header {
+  height: 40px;
+  top: 0;
+  padding: 10px 0;
+  position: fixed;
+  z-index: 103;
+
+  .banner {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    background: black;
+    display: flex;
+    align-items: center;
+    font-size: .75rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    position: fixed;
+    z-index: 103;
+    top: 0;
+  }
+
+  .navigation {
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2rem;
+  }
+
+}
