@@ -1,8 +1,13 @@
-<%= form_for User.new do |f| %>
-  <%= f.text_field :email, required: true, placeholder: "E-mail", class: 'form__registration__input email' %>
-  <%= f.text_field :first_name, required: true, placeholder: "First Name", class: 'form__registration__input firstname' %>
-  <%= f.text_field :last_name, required: true, placeholder: "Last Name", class: 'form__registration__input lastname' %>
-  <%= f.password_field :password, required: true, placeholder: "Password", class: 'form__registration__input password' %>
-  <%= f.password_field :password_confirmation, required: true, placeholder: "Confirm Password", class: 'form__registration__input confirmpassword' %>
-  <%= f.submit "Register" %>
+<h4>Register</h4>
+<p>To create a new account simply add your details to the form below.</p>
+
+<%= render 'components/resource_form' do %>
+  <%= form_for User.new do |f| %>
+    <%= f.text_field :first_name, required: true, placeholder: "First Name", class: 'form__input registration-firstname' %>
+    <%= f.text_field :last_name, required: true, placeholder: "Last Name", class: 'form__input registration-lastname' %>
+    <%= f.text_field :email, required: true, placeholder: "E-mail", class: 'form__input registration-email' %>
+    <%= f.password_field :password, required: true, placeholder: "Password", class: 'form__input registration-password' %>
+    <%= f.password_field :password_confirmation, required: true, placeholder: "Confirm Password", class: 'form__input registration-confirmpassword' %>
+    <%= f.submit "Register", class: 'form__button registration-button' %>
+  <% end %>
 <% end %>
