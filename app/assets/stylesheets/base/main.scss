@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+$default-font: 'Roboto';
+$header-font: 'Times New Roman', Times, serif;
+html, body {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  text-align: center;
+  font-family: $default-font;
+  letter-spacing: 0.1em;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-content-container {
+  margin: 6rem 0rem 0rem 0rem;
+  min-height: 100%;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 { font-size: 4em; }
+h2 { font-size: 3em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.5em; }
+
+h1, h2, h3, h4 {
+  text-align: center;
+  font-weight: 400;
+  font-family: $header-font;
+  letter-spacing: .2em;
+  margin: .5rem 0rem .5rem 0rem;
+  text-transform: uppercase;
+}
+
+.alert-error {
+  color: rgb(219, 0, 0);
+}
+
+.alert-success {
+  color: rgb(0, 148, 0);
+}
+
+
+.icon {
+  width: 2.5rem;
+  height: auto;
+  margin: .5rem;
+}
