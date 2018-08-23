@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if authenticated?(user, params)
       set_session(user)
       flash[:success] = 'Sign in successful!'
-      redirect_to dashboard_path
+      handle_redirect(user)
     else
       flash[:error] = 'Invalid credentials. Please try again.'
       render :new
@@ -26,5 +26,9 @@ class SessionsController < ApplicationController
 
     def set_session(user)
       session[:user] = user.id
+    end
+
+    def handle_redirect(user)
+      user.admin? ? (redirect_to admin_dashboard_path) : (redirect_to dashboard_path)
     end
 end
