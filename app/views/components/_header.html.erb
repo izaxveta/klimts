@@ -1,6 +1,9 @@
 <div class='header'>
   <div class='banner'>
     <% if @user %>
+      <% if @user.admin? %>
+        <%= image_tag 'icons/diamond', class: 'icon icon__admin-diamond', alt: "TWINKLE" %>
+      <% end %>
       <%= link_to 'Sign Out', signout_path, method: 'delete' %>
     <% else %>
       <%= link_to "Sign In", signin_path, class: 'button__signin' %>
