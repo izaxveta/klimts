@@ -1,5 +1,10 @@
-<%= form_for(:session, url: signin_path) do |f| %>
-  <%= f.text_field :email, placeholder: "Email", required: true, class: 'signin__input email' %>
-  <%= f.password_field :password, placeholder: 'Password', required: true, class: 'signin__input password' %>
-  <%= f.submit 'Sign In', class: 'signin__button submit' %>
+<h4>Sign In</h4>
+<p>Existing customers sign in using the fields below.</p>
+
+<%= render 'components/resource_form' do %>
+  <%= form_for(:session, url: signin_path) do |f| %>
+    <%= f.text_field :email, placeholder: "Email", required: true, class: 'form__input signin-email' %>
+    <%= f.password_field :password, placeholder: 'Password', required: true, class: 'form__input singin-password' %>
+    <%= f.submit 'Sign In', class: 'form__button signin-submit' %>
+  <% end %>
 <% end %>
