@@ -22,4 +22,10 @@ class Admin::ProductsController < ApplicationController
         :status
       )
     end
+
+    def successful_redirect(product)
+      flash[:success] = "Added new product: #{product.name}"
+      redirect_to admin_products_path
+    end
+
 end
