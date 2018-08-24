@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index', as: 'dashboard'
 
   # GLOBAL
-  resources :users, only: [:index, :create]
-  get  '/register', to: 'users#new',    as: 'register'
   get  '/signin',   to: 'sessions#new', as: 'signin'
   post '/signin',   to: 'sessions#create'
   delete '/signout', to: 'sessions#destroy', as: 'signout'
