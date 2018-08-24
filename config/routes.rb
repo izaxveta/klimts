@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'landing#index'
   # ADMIN
-  get '/admin/dashboard', to:'admin/dashboard#index', as: 'admin_dashboard'
+  get  '/admin/dashboard',    to: 'admin/dashboard#index', as: 'admin_dashboard'
   get  '/admin/products',     to: 'admin/products#index',  as: 'admin_products'
   get  '/admin/products/new', to: 'admin/products#new',    as: 'new_admin_product'
   post '/admin/products',     to: 'admin/products#create'
