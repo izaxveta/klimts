@@ -7,6 +7,11 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def create
+    product = Product.new(product_params)
+    product.save ? successful_redirect(product) : failed_redirect
+  end
+
   private
     def product_params
       params.require(:product).permit(
