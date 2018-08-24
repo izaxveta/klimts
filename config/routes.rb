@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index', as: 'dashboard'
 
   # GLOBAL
-  get  '/signin',   to: 'sessions#new', as: 'signin'
-  post '/signin',   to: 'sessions#create'
-  delete '/signout', to: 'sessions#destroy', as: 'signout'
+  get    '/signin',   to: 'sessions#new',     as: 'signin'
+  post   '/signin',   to: 'sessions#create'
+  delete '/signout',  to: 'sessions#destroy', as: 'signout'
 end
