@@ -28,4 +28,8 @@ class Admin::ProductsController < ApplicationController
       redirect_to admin_products_path
     end
 
+    def failed_redirect
+      flash[:error] = "Something went wrong."
+      redirect_to new_admin_product_path
+    end
 end
