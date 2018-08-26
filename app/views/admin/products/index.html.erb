@@ -1,0 +1,13 @@
+<div class='control__products'>
+  <% @products.each do |product| %>
+    <div class='product-item'>
+      <%= link_to(new_admin_product_path) do %>
+        <%= product.name %>
+        <%= number_to_currency(product.price) %> USD
+        <%= product.description %>
+        <%= product.status %>
+        <%= product.quantity %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
