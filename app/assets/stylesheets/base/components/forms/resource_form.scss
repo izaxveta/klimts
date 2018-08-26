@@ -11,7 +11,7 @@
     margin: auto;
   }
 
-  .form__input {
+  .form__input, select {
     width: 15rem;
     border: 0px;
     color: blue;
@@ -20,6 +20,13 @@
     text-align: center;
     margin: .5rem .5rem;
     padding: .5rem;
+  }
+
+  select {
+    width: 16rem;
+    height: 2rem;
+    background-color: white;;
+    text-align-last:center;
   }
 
   .form__input:focus { outline: none; }
