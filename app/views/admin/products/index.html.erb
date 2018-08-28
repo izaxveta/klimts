@@ -9,15 +9,26 @@
 </nav>
 
 <div class='control__products'>
-  <% @products.each do |product| %>
-    <div class='product-item'>
-      <%= link_to(new_admin_product_path) do %>
-        <%= product.name %>
-        <%= number_to_currency(product.price) %> USD
-        <%= product.description %>
-        <%= product.status %>
-        <%= product.quantity %>
+  <%= number_to_currency(Product.total_cash_on_hand) %>
+  <% @grouped_products.each do |status, products| %>
+    <h4>Status: <%= Product.display_status(status) %></h4>
+      <% products.each do |product| %>
+        <%= link_to(new_admin_product_path) do %>
+          <div class='product-item'>
+            <h4 class='product-item__product-name'>
+              <%= product.name %>
+            </h4>
+            <div class='control product-item__product-stock'>
+              <%= product.quantity %>
+            </div>
+            <div class='control product-item__product-price'>
+              <%= number_to_currency(product.price) %> USD
+            </div>
+            <div class='control product-item__product-create-date'>
+              <%= product.created_at.strftime('%b %e, %Y') %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-    </div>
-  <% end %>
+    <% end %>
 </div>
