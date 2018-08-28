@@ -1,3 +1,13 @@
+<nav class='control__nav products-nav'>
+  <%= link_to 'Active', admin_products_path, class: 'control__nav-item' %>
+  <%= link_to 'Inactive', admin_products_path(q: 'inactive'), class: 'control__nav-item' %>
+  <%= link_to 'Inventory', admin_products_path, class: 'control__nav-item' %>
+  <%= link_to 'Stats', admin_products_path, class: 'control__nav-item' %>
+  <%# TODO: Add inventory link (out of stock or retired) %>
+  <%# TODO: Add stats link %>
+  <%= link_to "+ Product", new_admin_product_path, class: 'control__nav-item button__add-product' %>
+</nav>
+
 <div class='control__products'>
   <% @products.each do |product| %>
     <div class='product-item'>
