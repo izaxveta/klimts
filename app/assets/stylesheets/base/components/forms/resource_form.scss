@@ -12,7 +12,7 @@
   }
 
   .form__input, select {
-    width: 15rem;
+    width: 25rem;
     border: 0px;
     color: blue;
     border-bottom: 1px solid black;
@@ -23,13 +23,19 @@
   }
 
   select {
-    width: 16rem;
+    width: 26rem;
     height: 2rem;
     background-color: white;;
     text-align-last:center;
   }
 
   .form__input:focus { outline: none; }
+
+  .form__options {
+    display: flex;
+    justify-content: center;
+    width: auto;
+  }
 
   .form__button {
     width: 10rem;
