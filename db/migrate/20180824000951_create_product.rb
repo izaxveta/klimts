@@ -6,6 +6,7 @@ class CreateProduct < ActiveRecord::Migration[5.1]
       t.string :description
       t.integer :quantity, default: 0
       t.integer :status, default: 0
+      t.timestamps
     end
   end
 end
