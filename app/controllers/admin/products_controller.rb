@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @grouped_products = handle_index_query(params[:q])
   end
 
   def new
@@ -32,4 +32,10 @@ class Admin::ProductsController < ApplicationController
       flash[:error] = "Something went wrong."
       redirect_to new_admin_product_path
     end
+
+    def handle_index_query(q)
+      query = q && q == 'inactive' ? %w(out_of_stock retired) : %w(pre_order in_stock)
+      Product.products_grouped_by_statuses(query)
+    end
+
 end
