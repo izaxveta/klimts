@@ -11,6 +11,11 @@
     <% end %>
   </div>
     <div class='navigation'>
-      <h3>Klimt's</h3>
+      <%= link_to root_path do %>
+        <h3>Klimt's</h3>
+      <% end %>
+      <% if current_user.admin? %>
+        <%= link_to "Products", admin_products_path, class:'control__nav-link' %>
+      <% end %>
     </div>
 </div>
